@@ -33,10 +33,12 @@ class Oscil():
     def stop(self):
         self.stop = True
 
-imWidth, imHeight = 1024, 512
-default_mic = sc.default_microphone()
-screen = np.zeros((imHeight,imWidth,3), dtype=np.uint8)
-xs = np.arange(imWidth).astype(np.int)
+def setupOscil():
+    global imWidth = 1024
+    global imHeight = 512
+    global default_mic = sc.default_microphone()
+    global screen = np.zeros((imHeight,imWidth,3), dtype=np.uint8)
+    global xs = np.arange(imWidth).astype(np.int)
 
 if __name__ == '__main__':
     oscil = Oscil(imWidth, imHeight, default_mic, screen, xs)

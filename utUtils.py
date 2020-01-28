@@ -61,6 +61,20 @@ def config():
     print("Configuring Noise Cancellation (Don't Speak)")
     record(conf, False)
     print("Configured Noise Cancellation")
+    peopleSpeaking = int(input("Type the number of people that will be speaking in this session: "))
+    people = []
+    conf['RecSeconds'] = 5
+    for i in range(peopleSpeaking):
+        people.append([input("Type your name: ")])
+        people[i].append(input("Type your native language"))
+        conf['Filename'] = people[i][0] + ".wav"
+        print("Configuring your voice, after the sign, speak slow and clearly the following phrase: ")
+        print("This is a test. The quick brown fox jumped over the lazy dog.")
+        time.sleep(1)
+        print("Speak")
+        record(conf, False)
+        print(people[i][0] + " Configured")
+    return people
 
 def noiseCancel(wfile, recOps):
     audio = pyaudio.PyAudio()

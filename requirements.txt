@@ -1,0 +1,11 @@
+pyaudio
+pyttsx3
+soundfile
+noisereduce
+webrtcvad
+librosa
+numpy
+googletrans
+google.cloud
+sounddevice
+resemblyzer
